@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-	{% load bootstrap5 %}
-	{% bootstrap_javascript %}
-	{% bootstrap_css %}
-    <title>Список товаров</title>
+    <meta charset="UTF-8">
+    <title>Запасы лекарств</title>
 </head>
 <body>
-    <h1>Список лекарственных препаратов</h1>
-    <ul>
-        {% for medicine in medicinies %}
-            <li> Название лекарства {{ medicine.name }}: Дозировка: {{ medicine.dosage }}, Количество: {{ medicine.quantity }}, Производитель: {{ medicine.manufacturer }}, Условия отпуска: {{ medicine.prescription_required }}, Категория: {{ medicine.category }}, Цена: {{ medicine.price }}.</li>
-        {% endfor %}
-    </ul>
+    <div style="font-size: 20px; margin: 20px 5px">Информация о лекарственных препаратах</div>
+    <table style="border: 1px solid grey; border-collapse: collapse; text-align: center"></table>
+    <table>
+        <thead>
+            <tr>
+                <th style="border: 1px solid grey; padding: 15px 15px">Название лекарства</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Дозировка</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Количество</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Производитель</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Условие отпуска</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Категория</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for medicine in var_med %}
+                <tr>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.name }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.dosage }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.quantity }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.manufacturer }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.prescription_required }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.category }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

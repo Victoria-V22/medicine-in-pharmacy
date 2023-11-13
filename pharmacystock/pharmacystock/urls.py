@@ -16,9 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from stockinfo.views import index
+#from stockinfo import views
+
+
+# urlpatterns = [
+#     path('stockinfo/', include('stockinfo.urls')),
+#     # path('pharmacy/', include('stockinfo.urls')),
+#     # path('stockinfo/', include('stockinfo.urls')),
+#     path('admin/', admin.site.urls),
+#     path('', include('stockinfo.urls')),
+#     path('test', views.test)
+# ]
+
+from stockinfo import views
 
 urlpatterns = [
-    path('stockinfo/', include('stockinfo.urls')),
     path('admin/', admin.site.urls),
+    path('', views.index),
+    path('pharmacy', views.pharmacies1),
+    path('medicine', views.medicines1),
+    path('stock', views.stocks)
 ]

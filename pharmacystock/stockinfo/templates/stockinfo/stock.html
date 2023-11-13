@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-	{% load bootstrap5 %}
-	{% bootstrap_javascript %}
-	{% bootstrap_css %}
-    <title>Список доступных лекарственных препаратов</title>
+    <meta charset="UTF-8">
+    <title>Запасы лекарств</title>
 </head>
 <body>
-    <h1>Информация о запасах</h1>
-    <ul>
-        {% for stock in stocks %}
-            <li> Аптека {{ stock.pharmacy }}: Лекарственный препарат: {{ stock.medicine }}, Доступно: {{ stock.quantity }}.</li>
-        {% endfor %}
-    </ul>
+    <div style="font-size: 20px; margin: 20px 5px">Информация о запасах лекарств</div>
+    <table style="border: 1px solid grey; border-collapse: collapse; text-align: center"></table>
+    <table>
+        <thead>
+            <tr>
+                <th style="border: 1px solid grey; padding: 15px 15px">Лекарство</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Аптека</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Количество</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in var_stock %}
+                <tr>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ stock.medicine }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ stock.pharmacy }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ stock.quantity }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

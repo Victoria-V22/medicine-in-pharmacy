@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	{% load bootstrap5 %}
+	{% bootstrap_javascript %}
+	{% bootstrap_css %}
+	<title>Информация о лекарствах и аптеках</title>
+</head>
+<body class="m-3">
+
+<div class="col">
+    <div class="card-body text-center display-1 mb-5">Информация о лекарствах и аптеках</div>
+    <div class="row h-80 align-items-center">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Запасы лекарств</h5>
+            <p class="card-text">Список всех лекарств и информация о их наличии в аптеках</p>
+            <a href="/stock" class="btn btn-primary">Смотреть запасы</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Аптеки</h5>
+            <p class="card-text">Список всех аптек и доступные в них лекарства</p>
+            <a href="/pharmacy" class="btn btn-primary">Смотреть аптеки</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-	{% load bootstrap5 %}
-	{% bootstrap_javascript %}
-	{% bootstrap_css %}
-    <title>Список товаров</title>
+    <meta charset="UTF-8">
+    <title>Список аптек</title>
 </head>
 <body>
-    <h1>Список атпек</h1>
-    <ul>
-        {% for pharmacy in pharmacies %}
-            <li> Адрес аптеки {{ pharmacy.address }}: Номер аптеки: {{ pharmacy.number }}, Ближайшее метро: {{ pharmacy.metro_station }}.</li>
-        {% endfor %}
-    </ul>
+    <div style="font-size: 20px; margin: 20px 5px">Информация об аптеках</div>
+    <table>
+        <thead>
+            <tr>
+                <th style="border: 1px solid grey; padding: 15px 15px">Аптека</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Адрес</th>
+                <th style="border: 1px solid grey; padding: 15px 15px">Ближайшее метро</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pharmacy in var_ph %}
+                <tr>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ pharmacy.address }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ pharmacy.number }}</td>
+                    <td style="border: 1px solid grey; padding: 15px 15px">{{ pharmacy.metro_station }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
