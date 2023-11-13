@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	{% load bootstrap5 %}
+	{% bootstrap_javascript %}
+	{% bootstrap_css %}
+    <title>Список доступных лекарственных препаратов</title>
+</head>
+<body>
+    <h1>Информация о запасах</h1>
+    <ul>
+        {% for stock in stocks %}
+            <li> Аптека {{ stock.pharmacy }}: Лекарственный препарат: {{ stock.medicine }}, Доступно: {{ stock.quantity }}.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

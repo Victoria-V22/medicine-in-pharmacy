@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	{% load bootstrap5 %}
+	{% bootstrap_javascript %}
+	{% bootstrap_css %}
+    <title>Список товаров</title>
+</head>
+<body>
+    <h1>Список лекарственных препаратов</h1>
+    <ul>
+        {% for medicine in medicinies %}
+            <li> Название лекарства {{ medicine.name }}: Дозировка: {{ medicine.dosage }}, Количество: {{ medicine.quantity }}, Производитель: {{ medicine.manufacturer }}, Условия отпуска: {{ medicine.prescription_required }}, Категория: {{ medicine.category }}, Цена: {{ medicine.price }}.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	{% load bootstrap5 %}
+	{% bootstrap_javascript %}
+	{% bootstrap_css %}
+    <title>Список товаров</title>
+</head>
+<body>
+    <h1>Список атпек</h1>
+    <ul>
+        {% for pharmacy in pharmacies %}
+            <li> Адрес аптеки {{ pharmacy.address }}: Номер аптеки: {{ pharmacy.number }}, Ближайшее метро: {{ pharmacy.metro_station }}.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
