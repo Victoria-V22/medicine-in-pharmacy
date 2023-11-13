@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Запасы лекарств</title>
 </head>
 <body>
-    <div style="font-size: 20px; margin: 20px 5px">Информация о запасах лекарств</div>
-    <table style="border: 1px solid grey; border-collapse: collapse; text-align: center"></table>
-    <table>
+    <div align="center" style="font-size: 24px; margin: 20px">Информация о запасах лекарств</div>
+    <table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 80%; margin-bottom: 20px;">
         <thead>
             <tr>
-                <th style="border: 1px solid grey; padding: 15px 15px">Лекарство</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Аптека</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Количество</th>
+                <th style="background-color: #f2f2f2;">Лекарство</th>
+                <th style="background-color: #f2f2f2;">Аптека</th>
+                <th style="background-color: #f2f2f2;">Количество</th>
             </tr>
         </thead>
         <tbody>
             {% for stock in var_stock %}
                 <tr>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ stock.medicine }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ stock.pharmacy }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ stock.quantity }}</td>
+                    <td>{{ stock.medicine }}</td>
+                    <td>{{ stock.pharmacy }}</td>
+                    <td align="center">{{ stock.quantity }}</td>
                 </tr>
             {% endfor %}
         </tbody>

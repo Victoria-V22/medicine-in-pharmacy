@@ -16,18 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from stockinfo import views
-
-
-# urlpatterns = [
-#     path('stockinfo/', include('stockinfo.urls')),
-#     # path('pharmacy/', include('stockinfo.urls')),
-#     # path('stockinfo/', include('stockinfo.urls')),
-#     path('admin/', admin.site.urls),
-#     path('', include('stockinfo.urls')),
-#     path('test', views.test)
-# ]
-
 from stockinfo import views
 
 urlpatterns = [

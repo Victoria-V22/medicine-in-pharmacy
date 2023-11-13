@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Список аптек</title>
 </head>
 <body>
-    <div style="font-size: 20px; margin: 20px 5px">Информация об аптеках</div>
-    <table>
+    <div align="center" style="font-size: 24px; margin: 20px 5px">Информация об аптеках</div>
+    <table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 80%; margin-bottom: 20px;">
         <thead>
             <tr>
-                <th style="border: 1px solid grey; padding: 15px 15px">Аптека</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Адрес</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Ближайшее метро</th>
+                <th style="background-color: #f2f2f2;">Номер аптеки</th>
+                <th style="background-color: #f2f2f2;">Адрес</th>
+                <th style="background-color: #f2f2f2;">Ближайшее метро</th>
             </tr>
         </thead>
         <tbody>
             {% for pharmacy in var_ph %}
                 <tr>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ pharmacy.address }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ pharmacy.number }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ pharmacy.metro_station }}</td>
+                    <td align="center">{{ pharmacy.number }}</td>
+                    <td>{{ pharmacy.address }}</td>
+                    <td>{{ pharmacy.metro_station }}</td>
                 </tr>
             {% endfor %}
         </tbody>

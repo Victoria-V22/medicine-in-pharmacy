@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Запасы лекарств</title>
+    <title>Информация о лекарственных препаратах</title>
 </head>
 <body>
-    <div style="font-size: 20px; margin: 20px 5px">Информация о лекарственных препаратах</div>
-    <table style="border: 1px solid grey; border-collapse: collapse; text-align: center"></table>
-    <table>
+    <div align="center" style="font-size: 24px; margin-bottom: 20px">Информация о лекарственных препаратах</div>
+    <table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 80%;">
         <thead>
             <tr>
-                <th style="border: 1px solid grey; padding: 15px 15px">Название лекарства</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Дозировка</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Количество</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Производитель</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Условие отпуска</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Категория</th>
-                <th style="border: 1px solid grey; padding: 15px 15px">Цена</th>
+                <th style="background-color: #f2f2f2;">Название лекарства</th>
+                <th style="background-color: #f2f2f2;">Дозировка</th>
+                <th style="background-color: #f2f2f2;">Количество</th>
+                <th style="background-color: #f2f2f2;">Производитель</th>
+                <th style="background-color: #f2f2f2;">Условие отпуска</th>
+                <th style="background-color: #f2f2f2;">Категория</th>
+                <th style="background-color: #f2f2f2;">Цена</th>
             </tr>
         </thead>
         <tbody>
             {% for medicine in var_med %}
                 <tr>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.name }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.dosage }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.quantity }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.manufacturer }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.prescription_required }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.category }}</td>
-                    <td style="border: 1px solid grey; padding: 15px 15px">{{ medicine.price }}</td>
+                    <td align="center">{{ medicine.name }}</td>
+                    <td align="center">{{ medicine.dosage }}</td>
+                    <td align="center">{{ medicine.quantity }}</td>
+                    <td align="center">{{ medicine.manufacturer }}</td>
+                    <td align="center">{{ medicine.prescription_required }}</td>
+                    <td align="center">{{ medicine.category }}</td>
+                    <td align="center">{{ medicine.price }}</td>
                 </tr>
             {% endfor %}
         </tbody>
