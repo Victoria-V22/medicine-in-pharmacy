@@ -18,7 +18,6 @@ class Pharmacy(models.Model):
         verbose_name = 'Аптека'
         ordering = ['address']
     
-
 class Medicine(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название лекарства')
     dosage = models.CharField(max_length=255, verbose_name='Дозировка')
@@ -27,6 +26,7 @@ class Medicine(models.Model):
     prescription_required = models.CharField(max_length=255, verbose_name='Условия отпуска')
     category = models.CharField(max_length=255, verbose_name='Категория')
     price = models.FloatField(null=True, blank=True, verbose_name='Цена')
+    #pharmacies = models.ManyToManyField(Pharmacy, related_name='medicines', verbose_name='Аптеки')
 
     def __str__(self):
         return self.name

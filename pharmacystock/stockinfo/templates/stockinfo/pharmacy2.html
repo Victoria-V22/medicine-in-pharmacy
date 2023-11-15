@@ -6,12 +6,13 @@
 </head>
 <body>
     <div align="center" style="font-size: 24px; margin: 20px 5px">Информация об аптеках</div>
-    <table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 80%; margin-bottom: 20px;">
+    <table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 80%;">
         <thead>
             <tr>
                 <th style="background-color: #f2f2f2;">Номер аптеки</th>
                 <th style="background-color: #f2f2f2;">Адрес</th>
                 <th style="background-color: #f2f2f2;">Ближайшее метро</th>
+                <th style="background-color: #f2f2f2;">Доступные лекарства</th>
             </tr>
         </thead>
         <tbody>
@@ -20,9 +21,15 @@
                     <td align="center">{{ pharmacy.number }}</td>
                     <td>{{ pharmacy.address }}</td>
                     <td>{{ pharmacy.metro_station }}</td>
+                    <td>
+                        <ul>
+                            {% for medicine in pharmacy.medicines %}
+                                <li>{{ medicine }}</li>
+                            {% empty %}
+                                <li>Нет лекарств</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
-    </table>
-</body>
-</html>

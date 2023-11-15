@@ -10,10 +10,15 @@ def index(request):
     return render(request, 'stockinfo/index2.html')
 
 def pharmacies1(request):
-    pharmacy = Pharmacy.objects.all()
-    return render(request, "stockinfo/pharmacy.html", {
-        'var_ph': pharmacy,
+    pharmacies_list = Pharmacy.objects.all()
+    for pharmacy in pharmacies_list:
+        pharmacy_medicines = Stock.objects.filter(pharmacy=pharmacy).select_related('medicine')
+        pharmacy.medicines = [stock.medicine.name for stock in pharmacy_medicines]
+
+    return render(request, "stockinfo/pharmacy2.html", {
+        'var_ph': pharmacies_list,
     })
+
 
 def medicines1(request):
     medicine = Medicine.objects.all()
